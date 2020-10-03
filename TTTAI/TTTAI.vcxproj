@@ -80,6 +80,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2_image-2.0.5\include;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2_ttf-2.0.15\include;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2-2.0.12\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2_ttf-2.0.15\lib\x86;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2_image-2.0.5\lib\x86;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2-2.0.12\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -120,10 +122,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2-2.0.12\include;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2_ttf-2.0.15\include;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2_image-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
