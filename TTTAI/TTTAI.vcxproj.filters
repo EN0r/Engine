@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Components">
+      <UniqueIdentifier>{eae65ac1-a4e9-443b-aba0-8bc7a6930cf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{fd8a1d31-5cf6-430f-a5a6-be93ab7ce229}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects">
+      <UniqueIdentifier>{95de09e2-da9c-44a8-a1ea-56e3a07a93bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Lua">
+      <UniqueIdentifier>{57391747-181c-42f0-b5c3-a723e990c558}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Projection">
+      <UniqueIdentifier>{9a49c06a-f6a4-4879-ab14-fd1c73718faf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Camera">
+      <UniqueIdentifier>{5a34d0f3-0799-4857-885d-b4cd86d704dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Utility">
+      <UniqueIdentifier>{aaad65b9-54d7-41e9-be2d-c91c167a1767}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Components\ComponentManagment">
+      <UniqueIdentifier>{98db0f8f-00cc-4314-8b2b-7b976f61fd1b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gameMain.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="RdBitmap.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="settings.h">
+      <Filter>Header Files\Core\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="componentSystem.h">
+      <Filter>Header Files\Components\ComponentManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="RdTransform.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="vec2d.h">
+      <Filter>Header Files\Core\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxCollider2D.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="collider2D.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

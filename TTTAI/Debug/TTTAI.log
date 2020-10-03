@@ -1,0 +1,14 @@
+﻿  main.cpp
+D:\code\TTTAI\TTTAI\BoxCollider2D.h(51,11): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\code\TTTAI\TTTAI\BoxCollider2D.h(52,11): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\code\TTTAI\TTTAI\componentSystem.h(53,40): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+D:\code\TTTAI\TTTAI\main.cpp(29): message : see reference to function template instantiation 'T &RdEntity::addComponent<boxCollider2D,int,int>(int &&,int &&)' being compiled
+          with
+          [
+              T=boxCollider2D
+          ]
+  TTTAI.vcxproj -> D:\code\TTTAI\Debug\TTTAI.exe
