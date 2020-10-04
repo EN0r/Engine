@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\SDL2-2.0.12\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\SDL2-2.0.12\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\imgui;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\glad\include\KHR;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2_image-2.0.5\include;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\glad\include;D:\SDL2-2.0.12\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2_image-2.0.5\lib\x86;D:\SDL2-2.0.12\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -92,12 +92,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\SDL2-2.0.12\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\glad\include;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\imgui;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\glad\include\KHR;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2_ttf-2.0.15\include;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2_image-2.0.5\include;D:\SDL2-2.0.12\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2Main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2Main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2_image-2.0.5\lib\x86;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2-2.0.12\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -149,13 +150,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="vendor\glad\src\glad.c" />
+    <ClCompile Include="vendor\imgui\examples\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="vendor\imgui\examples\imgui_impl_sdl.cpp" />
+    <ClCompile Include="vendor\imgui\imgui.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoxCollider2D.h" />
     <ClInclude Include="collider2D.h" />
     <ClInclude Include="componentSystem.h" />
     <ClInclude Include="gameMain.h" />
-    <ClInclude Include="RdBitmap.h" />
+    <ClInclude Include="RdSprite.h" />
     <ClInclude Include="RdTransform.h" />
     <ClInclude Include="settings.h" />
     <ClInclude Include="vec2d.h" />

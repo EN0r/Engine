@@ -40,7 +40,7 @@ private:
 	std::vector<std::unique_ptr<Component>> components;
 	std::bitset<settings::m_Ent> bitsets;
 public:
-	
+	std::string name = "NULL";
 	void start(SDL_Renderer* renderer); // { for (auto& comp : componentList) comp->start(); }
 	void update(SDL_Renderer* renderer);
 	void init(SDL_Renderer* renderer);

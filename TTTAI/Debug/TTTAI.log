@@ -3,14 +3,7 @@ C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\BoxCollider2D.h(41,31): warning
 C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\BoxCollider2D.h(42,31): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\BoxCollider2D.h(73,11): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\BoxCollider2D.h(74,11): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\componentSystem.h(56,40): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\gameMain.h(22): message : see reference to function template instantiation 'T &RdEntity::addComponent<boxCollider2D,int,int>(int &&,int &&)' being compiled
-          with
-          [
-              T=boxCollider2D
-          ]
+C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\gameMain.h(75,48): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\gameMain.h(78,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\gameMain.h(100,50): warning C4244: 'argument': conversion from 'double' to 'Uint32', possible loss of data
   TTTAI.vcxproj -> C:\Users\eriah\source\repos\RDV3736\Engine\Debug\TTTAI.exe
