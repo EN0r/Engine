@@ -1,6 +1,6 @@
 # RdEngine
 
-#Current features:
+Current features:
 
 To use the entity component system you can assign components to entities. You'd do this by doing:
 `
@@ -11,3 +11,6 @@ To access the component later you can do:
 `
 entity->getComponent<COMPONENT>();
 `
+
+
+The
