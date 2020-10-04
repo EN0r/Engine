@@ -11,6 +11,16 @@ To access the component later you can do:
 `
 entity->getComponent<COMPONENT>();
 `
-
-
-The
+Transform:
+The transform has the current modifiers:
+`
+vec2d position
+vec2d scale
+float rotation
+`
+boxCollider2D:
+The boxCollider2D has the current modifiers:
+`
+bool drawOutline
+`
+Most of the boxCollider inherits it's data from the parent entity.
