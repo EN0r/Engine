@@ -1,4 +1,4 @@
-/*
+
 #pragma once
 #include "componentSystem.h"
 #include "RdTransform.h"
@@ -6,24 +6,40 @@
 class boxCollider2D : public Component
 {
 private:
-	RdTransform* transform = nullptr;
+	RdTransform* transform = &parentEntity->getComponent<RdTransform>();
 	bool AABB(RdTransform bTransform);
 	float w, h;
 	SDL_Rect tBox = {0,0,0,0};
 	RdEntityManager* entityManager = RdEntityManager::getInstance();
 	bool colliding = false;
 public:
-	boxCollider2D(float w, float h);
+	boxCollider2D(float w = 0, float h = 0);
 	bool drawOutline = true;
 	bool init() override final 
 	{ 
-		transform = &parentEntity->getComponent<RdTransform>(); 
+		if (parentEntity->hasComponent<RdTransform>())
+		{
+			// does not have any components
+			std::cout << "CRITICAL ERROR: Transform was NOT FOUND in component: boxCollider2D" << std::endl;
+			std::cout << "CONSTRUCTING NEW TRASNFORM." << std::endl;
+			this->parentEntity->addComponent<RdTransform>().position.x = this->parentEntity->x;
+			this->parentEntity->getComponent<RdTransform>().position.y = this->parentEntity->y;
+			this->transform = &this->parentEntity->getComponent<RdTransform>();
+		}
+		if (this->transform == nullptr)
+		{
+			std::cout << "CRITICAL ERROR: Transform was NULL in component: boxCollider2D" << std::endl;
+			std::cout << "CONSTRUCTING NEW TRASNFORM." << std::endl;
+			this->parentEntity->addComponent<RdTransform>().position.x = this->parentEntity->x;
+			this->parentEntity->getComponent<RdTransform>().position.y = this->parentEntity->y;
+			this->transform = &this->parentEntity->getComponent<RdTransform>();
+		}
 		return true; 
 	}
 	void update(SDL_Renderer* renderer) override final
 	{
-		//tBox.x = transform->position.x;
-		//tBox.y = transform->position.y;
+		tBox.x = transform->position.x;
+		tBox.y = transform->position.y;
 		if (drawOutline)
 		{
 			SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
@@ -49,10 +65,13 @@ public:
 
 boxCollider2D::boxCollider2D(float w1, float h1)
 {
-	tBox.w = w;
-	tBox.h = h;
+	if (w1 == 0 && h1 == 0)
+		std::cout << "WARNING: Not set size for boxCollider2D Component" << std::endl;
+
 	this->w = w1;
 	this->h = h1;
+	tBox.w = w;
+	tBox.h = h;
 }
 
 bool boxCollider2D::AABB(RdTransform bTransform)
@@ -66,4 +85,3 @@ bool boxCollider2D::AABB(RdTransform bTransform)
 	}
 	return false;
 }
-*/

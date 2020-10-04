@@ -5,6 +5,8 @@
 #include <memory>
 #include <vector>
 #include "settings.h"
+#include "vec2d.h"
+
 #ifdef linux
 #define NULL 0
 #endif
@@ -38,6 +40,7 @@ private:
 	std::vector<std::unique_ptr<Component>> components;
 	std::bitset<settings::m_Ent> bitsets;
 public:
+	
 	void start(SDL_Renderer* renderer); // { for (auto& comp : componentList) comp->start(); }
 	void update(SDL_Renderer* renderer);
 	void init(SDL_Renderer* renderer);
@@ -53,15 +56,18 @@ public:
 		T* component(new T(std::forward<args>(argV)...));
 		std::unique_ptr<Component> uqPointer(component);
 		components.emplace_back(std::move(uqPointer));
+		component->parentEntity = this; // Component is being set here but for some reason it's nullptr elsewhere.
 		if (component->init())
 		{
 			componentList[componentSystem::getComponentID<T>()] = component;
 			bitsets[componentSystem::getComponentID<T>()] = true;
-			component->parentEntity = this;
 			return *component;
 		}
 		return *static_cast<T*>(NULL);
 	}
+	
+	// This is a hotfix. Should be changed in the future as it's going to cause problems down the line.
+	float x, y;
 
 	template<typename T>
 	T& getComponent()
@@ -71,6 +77,7 @@ public:
 	}
 };
 
+
 class Component
 {
 private:
@@ -79,17 +86,17 @@ public:
 	RdEntity* parentEntity = new RdEntity;
 	// every component will have these
 	virtual bool init() { return true; }
-	virtual void start(SDL_Renderer* renderer = nullptr)
+	virtual void start(SDL_Renderer* renderer)
 	{
 
 	}
-	virtual void update(SDL_Renderer* renderer = nullptr)
+	virtual void update(SDL_Renderer* renderer)
 	{
 
 	}
 };
 
-void RdEntity::start(SDL_Renderer* renderer = nullptr) // { for (auto& comp : componentList) comp->start(); }
+void RdEntity::start(SDL_Renderer* renderer = nullptr)
 {
 	for (const auto& component : componentList)
 		if(component != nullptr)
@@ -100,13 +107,15 @@ void RdEntity::start(SDL_Renderer* renderer = nullptr) // { for (auto& comp : co
 void RdEntity::update(SDL_Renderer* renderer = nullptr)
 {
 	for (auto& component : componentList) 
-		component->update(renderer);
+		if(component != nullptr)
+			component->update(renderer);
 }
 
  void RdEntity::init(SDL_Renderer* renderer)
 {
 	 for (auto& component : componentList)
-		 component->init();
+		 if (component != nullptr) // Fixed but where it was checking fields in array which never exists.
+			 component->init();
 }
 
 class RdEntityManager

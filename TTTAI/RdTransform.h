@@ -1,6 +1,7 @@
 #pragma once
 #include "vec2d.h"
 #include "componentSystem.h"
+
 class RdTransform : public Component
 {
 public:

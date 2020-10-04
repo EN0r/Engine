@@ -128,6 +128,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2_image-2.0.5\lib\x86;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2_ttf-2.0.15\lib\x86;C:\Users\eriah\source\repos\RDV3736\Engine\TTTAI\vendor\SDL2-2.0.12\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
